@@ -8,6 +8,7 @@ namespace WarGame
         {
             Console.WriteLine("11111");
             Console.WriteLine("123");
+            int[] happyCats;
         }
     }
 }
