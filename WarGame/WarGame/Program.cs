@@ -7,6 +7,7 @@ namespace WarGame
         static void Main(string[] args)
         {
             Console.WriteLine("1111111111");
+            Console.WriteLine("222");
 
         }
     }
