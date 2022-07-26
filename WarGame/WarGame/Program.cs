@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WarGame
 {
@@ -9,6 +10,7 @@ namespace WarGame
             Console.WriteLine("11111");
             Console.WriteLine("123");
             int[] happyCats;
+            List<int> foodForCats = new List<int>();
         }
     }
 }
