@@ -11,6 +11,7 @@ namespace WarGame
             Console.WriteLine("123");
             int[] happyCats;
             List<int> foodForCats = new List<int>();
+            Console.WriteLine("Happy cat eat a lot");
         }
     }
 }
