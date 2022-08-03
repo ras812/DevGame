@@ -3,6 +3,7 @@ namespace WarGame
 {
 	public enum Gender
 	{
+	
 	}
 }
 
