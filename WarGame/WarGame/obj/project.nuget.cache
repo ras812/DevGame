@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R3dL667gMicNT9qufD6EaE4ww2I2y0zsK3OD1GuwI0KGwp3d7ITx7M6f6TtXMGfE1c8Na6UIt6bT1f2TLaVMWg==",
+  "dgSpecHash": "eqx6xAAP6+I336ipBPUMctYUB7fvnC06l7uDUos7RLImXKFUtnpkxsLkakU3HI2OFB9f9XBzsKvjh27JtA5FZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user765\\Desktop\\Projects\\НОВАЯ УЧЕБНАЯ\\DevGame\\WarGame\\WarGame\\WarGame.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\user765\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
-  ],
+  "projectFilePath": "/Users/Aleks/Projects/DevGame/WarGame/WarGame/WarGame.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
