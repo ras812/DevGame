@@ -9,6 +9,7 @@ namespace WarGame
         {
             Console.WriteLine("WarGame");
             Warrior obj = new Warrior();
+            Console.WriteLine("Victory!");
         }
     }
 }
