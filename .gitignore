@@ -12,6 +12,13 @@ properties
 Properties/
 properties/
 [Oo]bj
+[Oo]bj/
+obj
+obj/
+obj\
+Obj
+Obj/
+Obj\
 [Bb]in
 [Dd]ebug
 [Bb]uild/
