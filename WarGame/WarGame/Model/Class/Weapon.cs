@@ -4,7 +4,16 @@ using System.Text;
 
 namespace WarGame
 {
-    public class Weapon
+    public class Weapon : Weapons
     {
+        public Weapon(): base()
+        {
+            
+        }
+
+        public Weapon(int x)
+        {
+
+        }
     }
 }
