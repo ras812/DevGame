@@ -12,6 +12,7 @@ namespace WarGame
             Console.WriteLine("Victory!");
             Weapon sword = new Weapon();
             Weapon mace = new Weapon(100);
+            Console.WriteLine("TrimBim!");
         }
     }
 }
