@@ -1,5 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "R3dL667gMicNT9qufD6EaE4ww2I2y0zsK3OD1GuwI0KGwp3d7ITx7M6f6TtXMGfE1c8Na6UIt6bT1f2TLaVMWg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user765\\Desktop\\Projects\\НОВАЯ УЧЕБНАЯ\\DevGame\\WarGame\\WarGame\\WarGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user765\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+=======
   "dgSpecHash": "IYXaATCMx99uldPW5jMs+4n2q24ZKoqTIqPaHwGI9Ha61z/0R19QWauLebN/Kf3/DsgVGvf37RcKQcxxRvHlng==",
   "success": true,
   "projectFilePath": "D:\\ProgC\\DevGame\\WarGame\\WarGame\\WarGame.csproj",
@@ -12,4 +21,5 @@
       "message": "Problem reading the cache file D:\\ProgC\\DevGame\\WarGame\\WarGame\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
+>>>>>>> ec0a81c25211f4abd203b35c851b94e480f17413
 }
