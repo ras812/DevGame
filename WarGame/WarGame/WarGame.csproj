@@ -5,4 +5,16 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Model\" />
+    <None Remove="Model\AbstractClasses\" />
+    <None Remove="Model\Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="Model\Class\" />
+    <Folder Include="Model\Interfaces\" />
+    <Folder Include="Model\AbstractClasses\" />
+    <Folder Include="Model\Enums\" />
+  </ItemGroup>
 </Project>

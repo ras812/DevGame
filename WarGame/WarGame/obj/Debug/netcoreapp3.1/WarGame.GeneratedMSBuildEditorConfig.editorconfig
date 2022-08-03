@@ -1,3 +1,7 @@
 is_global = true
 build_property.RootNamespace = WarGame
+<<<<<<< HEAD
 build_property.ProjectDir = D:\ProgC\DevGame\WarGame\WarGame\
+=======
+build_property.ProjectDir = /Users/Aleks/Projects/DevGame/WarGame/WarGame/
+>>>>>>> 9bf1fa37716e22136e8bd7ebf130268397c676c0
