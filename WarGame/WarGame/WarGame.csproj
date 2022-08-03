@@ -11,13 +11,7 @@
     <None Remove="Model\Enums\" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
 	<Folder Include="UML\" />
-	<Folder Include="Model\" />
     <Folder Include="Model\Class\" />
->>>>>>> ec0a81c25211f4abd203b35c851b94e480f17413
-    <Folder Include="Model\Interfaces\" />
-    <Folder Include="Model\Enums\" />
   </ItemGroup>
 </Project>

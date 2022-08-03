@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarGame.Model.AbstractClasses
+namespace WarGame
 {
-    internal class Weapons
+    public abstract class Weapons
     {
+
     }
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarGame.Model.Class
+namespace WarGame
 {
-    internal class Armor
+    public class Armor
     {
     }
 }
