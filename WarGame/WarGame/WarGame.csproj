@@ -11,7 +11,8 @@
     <None Remove="Model\Enums\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+	<Folder Include="UML\" />
+	<Folder Include="Model\" />
     <Folder Include="Model\Class\" />
     <Folder Include="Model\Interfaces\" />
     <Folder Include="Model\AbstractClasses\" />
