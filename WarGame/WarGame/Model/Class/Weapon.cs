@@ -12,7 +12,8 @@ namespace WarGame
         public override string Name
         {
             get { return this._name; }
-            set { value = _name; } //readonly property
+            set { if(IsDiggit(_name)) value = _name; };
+  
         }
 
         public override Type Type1 //что не так?
