@@ -11,7 +11,7 @@ namespace WarGame
             Warrior obj = new Warrior();
             Console.WriteLine("Victory!");
             Weapon sword = new Weapon();
-            Weapon mace = new Weapon(100);
+            Weapon mace = new Weapon();
             Console.WriteLine("TrimBim!");
         }
     }

@@ -6,5 +6,11 @@ namespace WarGame
 {
     public class Armor
     {
+     
+    
+    
+    
+    
+    
     }
 }

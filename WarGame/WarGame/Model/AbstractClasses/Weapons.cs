@@ -9,7 +9,7 @@ namespace WarGame
         private string _name = "";  // Field
 
         // Property
-        public virtual string Name { get { return _name; } set { _name = value; } }
+        public virtual string Name { get { return _name; } set {  _name = value; } }
 
         public Weapons(string name) : this(name, 100, 200)
         {

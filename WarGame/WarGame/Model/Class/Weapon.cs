@@ -5,11 +5,36 @@ namespace WarGame
     public class Weapon : Weapons
     {
         private readonly string _name = "";
+        public Type _type1 = Type.Light;
+        public int _damageMin;
+        public int _damageMax;
 
         public override string Name
         {
-            get { return this._name; }  //readonly property
+            get { return this._name; }
+            set { value = _name; } //readonly property
         }
+
+        public override Type Type1 //что не так?
+        {
+            get { return this._type1; }
+            set { value = _type1; }
+        }
+        
+        public override int DamageMin
+        {
+            get { return this._damageMin; }
+            set {  value = _damageMin; }
+        }
+
+        public override int DamageMax
+        {
+            get { return this._damageMax; }
+            set { value = _damageMax; }
+        }
+
+
+
 
         public Weapon() : this("Kings Arthur Excalibur")
         {
