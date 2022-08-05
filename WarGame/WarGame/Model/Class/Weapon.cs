@@ -4,48 +4,47 @@ namespace WarGame
 {
     public class Weapon : Weapons
     {
-        private readonly string _name = "";
-        public Type _type1 = Type.Light;
-        public int _damageMin;
-        public int _damageMax;
+        // Fields
+        private string _name;
+        private ItemType _weaponType;
+        private int _damageMin;
+        private int _damageMax;
 
+        // Properties
         public override string Name
         {
-            get { return this._name; }
-            set { if(IsDiggit(_name)) value = _name; };
-  
+            get { return _name; }
+            set { _name = value; }
         }
 
-        public override Type Type1 //что не так?
+        public override ItemType WeaponType //уже все норм!!!
         {
-            get { return this._type1; }
-            set { value = _type1; }
+            get { return _weaponType; }
+            set { _weaponType = value; }
         }
         
         public override int DamageMin
         {
-            get { return this._damageMin; }
-            set {  value = _damageMin; }
+            get { return _damageMin; }
+            set { _damageMin = value; }
         }
 
         public override int DamageMax
         {
-            get { return this._damageMax; }
-            set { value = _damageMax; }
+            get { return _damageMax; }
+            set { _damageMax = value; }
         }
 
-
-
-
-        public Weapon() : this("Kings Arthur Excalibur")
+        //Constructors
+        public Weapon() //: this("Kings Arthur Excalibur")
         {
 
         }
 
-        public Weapon(string weaponName) : base(weaponName, 100, 200)
-        {
-            _name = weaponName;
-        }
+        //public Weapon(string weaponName) : base(weaponName, 100, 200)
+        //{
+        //    _name = weaponName;
+        //}
 
         // Это написано тестово, тут будет написан ТВОЙ код )))
         // (можешь эту хрень удалить)
