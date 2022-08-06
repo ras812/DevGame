@@ -1,29 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace WarGame.Model.Class
+namespace WarGame
 {
-    internal class Handlers
+    public class Handlers
     {
-
         public static bool IsString(string text)
         {
-
             bool b = true;
-            for (int i = 0; i < text.Length; i++)
+            int txtLen = text.Length;
+            for (int i = 0; i < txtLen; i++)
             {
                 b = Char.IsLetter(text[i]);
                 if (b == false)
                 {
                     break;
                 }
-
             }
-
             return b;
-
         }
-
     }
 }
