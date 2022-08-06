@@ -13,6 +13,5 @@
   <ItemGroup>
 	<Folder Include="UML\" />
 	<Folder Include="UML\" />
-    <Folder Include="Model\Class\" />
   </ItemGroup>
 </Project>

@@ -14,25 +14,25 @@ namespace WarGame
         public override string Name
         {
             get { return _name; }
-            set { _name = value; }
+            set { if (IsString(_weaponType)) _name = value; }  // Не видит эту функцию, возможно,я не туда ее поместила
         }
 
         public override ItemType WeaponType //уже все норм!!!
         {
             get { return _weaponType; }
-            set { _weaponType = value; }
+            set {   _weaponType = value; } 
         }
         
         public override int DamageMin
         {
-            get { return _damageMin; }
-            set { _damageMin = value; }
+            get { return _damageMin; }     //сделала проверку
+            set { if(_damageMin > 0 && _damageMin < _damageMax) _damageMin = value; }
         }
 
         public override int DamageMax
         {
             get { return _damageMax; }
-            set { _damageMax = value; }
+            set { if (_damageMax > 0 && _damageMax > _damageMin) _damageMax = value; }
         }
 
         //Constructors

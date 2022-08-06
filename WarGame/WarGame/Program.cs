@@ -63,6 +63,24 @@ namespace WarGame
            return test;
         }
     
+      public static bool IsString(string text)
+        {
+
+           bool b = true;
+            for (int i = 0; i < text.Length; i++)
+            {
+                b = Char.IsLetter(text[i]);
+                if (b == false)
+                {
+                    break;
+                }
+            
+            }
+        
+           return b;
+        
+        }
+    
     }
 
 
