@@ -9,6 +9,7 @@
     <None Remove="Model\" />
     <None Remove="Model\AbstractClasses\" />
     <None Remove="Model\Enums\" />
+    <None Remove="JetBrains.ReSharper.SDK" />
   </ItemGroup>
   <ItemGroup>
 	<Folder Include="UML\" />

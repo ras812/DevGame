@@ -6,19 +6,19 @@ namespace WarGame
 {
     public abstract class Armors
     {
-        public virtual string NameArm
+        public virtual string Name
         {
             get;
             set;
         }
 
-        public virtual Type TypeArm
+        public virtual ItemType ArmorType
         {
             get;
             set;
         }
     
-        public virtual int ArmorType
+        public virtual int ArmorDefence
         {
             get;
             set;

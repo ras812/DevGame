@@ -7,27 +7,27 @@ namespace WarGame
     public class Armor : Armors
     {
 
-        public string _nameArm;
-        public Type _typeArm;
-        public int _armorType;
+        public string _name;
+        public ItemType _armorType;
+        public int _armorDefence;
 
-        public override string NameArm
+        public override string Name
         {
-            get { return _nameArm; }
-            set { _nameArm = value; }
+            get { return _name; }
+            set { _name = value; }
         }
 
-        public override Type TypeArm
-        {
-            get { return _typeArm; }
-            set { _typeArm = value; }   
-        }
-
-        public override int ArmorType
+        public override ItemType ArmorType
         {
             get { return _armorType; }
-            set {if(_armorType > 0) _armorType = value; }
+            set { _armorType = value; }   
         }
+
+        public override int ArmorDefence
+        {
+            get { return _armorDefence; }
+            set { if(_armorDefence > 0) _armorDefence = value; }
+        }   // тут тоже надо делать проверку, если знечение будет отрицательным, то должно ровняться 1
     
     }
 }
