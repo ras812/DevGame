@@ -26,7 +26,7 @@ namespace WarGame
         public override int ArmorType
         {
             get { return _armorType; }
-            set {if(_armorType > 0) _armorType = value; }
+            set {if(value > 0) _armorType = value; }
         }
     
     }
