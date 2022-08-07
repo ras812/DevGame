@@ -36,9 +36,13 @@ namespace WarGame
         
         public override int DamageMin
         {
-            get { return _damageMin; }     //сделала проверку
-            set { if(_damageMin > 0 && _damageMin < _damageMax) _damageMin = value; }
+            get { return _damageMin; }   //ВОТ ТУТ ОН НЕ ДАЕТ ПОСТАВИТЬ VALUE
+            set { if(value > 0 && _value < _damageMax) _damageMin = value; }
         }   // если проверка прошла несупешно, то тогда значение данного поля равно 1
+
+
+
+
 
         public override int DamageMax
         {
