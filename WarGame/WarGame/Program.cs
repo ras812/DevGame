@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace WarGame
 {
@@ -7,82 +6,21 @@ namespace WarGame
     {
         static void Main(string[] args)
         {
-            // МОЖНО ВОСПОЛЬЗОВАТЬСЯ ВСТРОЕННЫМ МЕТОДОМ
-            // Char.IsLetter();
+            Weapon mase = new Weapon("Boulder", ItemType.Medium, -5, -6);
+            Console.WriteLine($"Name[{mase.Name}], ItemType[{mase.WeaponType}], " +
+                              $"dmgMin[{mase.DamageMin}], dmgMax[{mase.DamageMax}]");
 
-            // Exp #1
-            string text = "цифры";
+            Weapon sword = new Weapon("Excalibur", ItemType.Heavy, 10, 5);
+            Console.WriteLine($"Name[{sword.Name}], ItemType[{sword.WeaponType}], " +
+                              $"dmgMin[{sword.DamageMin}], dmgMax[{sword.DamageMax}]");
 
-            bool b = true;
-            for (int i = 0; i < text.Length; i++)
-            {
-                b = Char.IsLetter(text[i]);
-                if (b == false)
-                {
-                    break;
-                }
-            }
-            Console.WriteLine($"Is TEXT [{text}] contain only letters? [{b}].");
+            Weapon dagger = new Weapon("Kriss", ItemType.Light, 3, 7);
+            Console.WriteLine($"Name[{dagger.Name}], ItemType[{dagger.WeaponType}], " +
+                              $"dmgMin[{dagger.DamageMin}], dmgMax[{dagger.DamageMax}]");
 
-
-            // Exp #2
-            text = "ци1фры";
-
-            b = true;
-            for (int i = 0; i < text.Length; i++)
-            {
-                b = Char.IsLetter(text[i]);
-                if (b == false)
-                {
-                    break;
-                }
-            }
-            Console.WriteLine($"Is TEXT [{text}] contain only letters? [{b}].");
-
-            // Сделай из этого примера статическую функцию и помести ее в новый класс Handlers 
-            // там будем хранить разные обработчики
-
-            //bool test = IsDigit(text);
-            //Console.WriteLine(test);
-
-
-
-
+            // ВОТ ТАКИМ ОБРАЗОМ МОЖНО ПРОТЕСТИРОВАТЬ КЛАСС ОРУЖИЕ
         }
 
-        public static bool IsDigit(string text)
-        {
-            bool test = true;
-
-            foreach (char x in text)
-            {
-              if(char.IsDigit(x))
-                test = false;
-                
-            }
-           return test;
-        }
-    
-      public static bool IsString(string text)
-        {
-
-           bool b = true;
-            for (int i = 0; i < text.Length; i++)
-            {
-                b = Char.IsLetter(text[i]);
-                if (b == false)
-                {
-                    break;
-                }
-            
-            }
-        
-           return b;
-        
-        }
-    
     }
-
-
 
 }

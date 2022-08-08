@@ -35,27 +35,50 @@ namespace WarGame
         }
         
         public override int DamageMin
-        {
-            get { return _damageMin; }   //ВОТ ТУТ ОН НЕ ДАЕТ ПОСТАВИТЬ VALUE
-            set { if(value > 0 && _value < _damageMax) _damageMin = value; }
-        }   // если проверка прошла несупешно, то тогда значение данного поля равно 1
-
-
-
-
+        {                                   // А ТУТ И НЕЛЬЗЯ ЭТОГО ДЕЛАТЬ!!!
+            get { return _damageMin; }      // ВОТ ТУТ ОН НЕ ДАЕТ ПОСТАВИТЬ VALUE
+            set
+            {
+                if (value > 0)
+                {
+                    _damageMin = value;
+                }
+                else
+                {
+                    _damageMin = 1;
+                }
+            }
+        }
 
         public override int DamageMax
         {
             get { return _damageMax; }
-            set { if (_damageMax > 0 && _damageMax > _damageMin) _damageMax = value; }
-        }   // если проверка прошла несупешно, то тогда значение данного поля равно 1
+            set
+            {
+                if (value > 0)
+                {
+                    _damageMax = value;
 
-        //Constructors
-        public Weapon()
-        {
-            // нужно обязательно сделать конструктор
+                    if (_damageMax <= _damageMin)
+                    {
+                        _damageMax = _damageMin;
+                    }
+                }
+                else
+                {
+                    _damageMax = 1;
+                }
+            }
         }
 
+        //Constructors
+        public Weapon(string name, ItemType itemType, int dmgMin, int dmgMax)
+        {
+            Name = name;
+            WeaponType = itemType;
+            DamageMin = dmgMin;
+            DamageMax = dmgMax;
+        }
 
         // Это написано тестово, тут будет написан ТВОЙ код )))
     }
