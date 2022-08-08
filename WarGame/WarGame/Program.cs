@@ -19,7 +19,13 @@ namespace WarGame
                               $"dmgMin[{dagger.DamageMin}], dmgMax[{dagger.DamageMax}]");
 
             // ВОТ ТАКИМ ОБРАЗОМ МОЖНО ПРОТЕСТИРОВАТЬ КЛАСС ОРУЖИЕ
-        }
+
+            Armor shield = new Armor("Shield", ItemType.Light, 5);
+            Console.WriteLine($"Название {shield.Name}, уровень защиты: {ItemType.Light}, количество защиты: {5}");
+
+            //ПРОТЕСТИРОВАЛА КЛАСС ЗАЩИТА
+        } 
+        
 
     }
 
