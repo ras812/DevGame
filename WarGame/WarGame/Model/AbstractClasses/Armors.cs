@@ -9,22 +9,19 @@ namespace WarGame
         public virtual string Name
         {
             get;
-            set;
+            //set;
         }
 
         public virtual ItemType ArmorType
         {
             get;
-            set;
+            //set;
         }
     
         public virtual int ArmorDefence
         {
             get;
-            set;
+            //set;
         }
-    
-    
-    
     }
 }
