@@ -24,9 +24,14 @@ namespace WarGame
             Console.WriteLine($"Название {shield.Name}, уровень защиты: {shield.ArmorType}, " +
                               $"количество защиты: {shield.ArmorDefence}");
 
-            Armor plate = new Armor("P1ate", ItemType.Heavy, -5);
+            Armor plate = new Armor("P1ate", ItemType.Heavy, -5); //    КАК-ТО СТРАННО ПРОВЕРКА РАБОТАЕТ. МНЕ НЕ ОЧЕНЬ НРАВИТСЯ ПРОВЕРКА В КОНСТРУКТОРЕ
             Console.WriteLine($"Название {plate.Name}, уровень защиты: {plate.ArmorType}, " +
                               $"количество защиты: {plate.ArmorDefence}");
+
+
+            Armor magicProtect = new Armor("MagicProtect", ItemType.Medium, 20);
+            Console.WriteLine($"Название {magicProtect.Name}, уровень защиты: {magicProtect.ArmorType}, " +
+                             $"количество защиты: {magicProtect.ArmorDefence}");
 
             //ПРОТЕСТИРОВАЛА КЛАСС ЗАЩИТА
         }
