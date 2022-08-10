@@ -4,7 +4,7 @@ namespace WarGame
 {
     class Program
     {
-        static void Main(string[] args)    //ПОЧЕМУ-ТО dmgMin ВСЕГДА РАВНА 0!
+        static void Main(string[] args)    //ПОЧЕМУ-ТО dmgMin ВСЕГДА РАВНА 0!!
         {
             Weapon mase = new Weapon("Boulder1", ItemType.Medium, 5, 10);
             Console.WriteLine($"Name[{mase.Name}], ItemType[{mase.WeaponType}], " +
