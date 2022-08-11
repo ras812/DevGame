@@ -4,6 +4,7 @@ namespace WarGame
 {
     class Program
     {
+<<<<<<< HEAD
         static void Main(string[] args)    //ПОЧЕМУ-ТО dmgMin ВСЕГДА РАВНА 0!!
         {
             Weapon mase = new Weapon("Boulder1", ItemType.Medium, 5, 10);
@@ -19,6 +20,37 @@ namespace WarGame
             //                              $"dmgMin[{dagger.DamageMin}], dmgMax[{dagger.DamageMax}]");
 
             //            // ВОТ ТАКИМ ОБРАЗОМ МОЖНО ПРОТЕСТИРОВАТЬ КЛАСС ОРУЖИЕ
+=======
+        static void Main(string[] args)
+        {
+            Weapon mase = new Weapon("Boulder", ItemType.Medium, -5, -6);
+            Console.WriteLine($"Name[{mase.Name}], ItemType[{mase.WeaponType}], " +
+                              $"dmgMin[{mase.DamageMin}], dmgMax[{mase.DamageMax}]");
+
+            Weapon sword = new Weapon("Excalibur", ItemType.Heavy, 10, 5);
+            Console.WriteLine($"Name[{sword.Name}], ItemType[{sword.WeaponType}], " +
+                              $"dmgMin[{sword.DamageMin}], dmgMax[{sword.DamageMax}]");
+            
+            Weapon dagger = new Weapon("Kriss", ItemType.Light, 3, 7);
+            Console.WriteLine($"Name[{dagger.Name}], ItemType[{dagger.WeaponType}], " +
+                              $"dmgMin[{dagger.DamageMin}], dmgMax[{dagger.DamageMax}]");
+
+            // ВОТ ТАКИМ ОБРАЗОМ МОЖНО ПРОТЕСТИРОВАТЬ КЛАСС ОРУЖИЕ
+
+            Armor shield = new Armor("Shield", ItemType.Light, 5);
+            Console.WriteLine($"Название {shield.Name}, уровень защиты: {shield.ArmorType}, " +
+                              $"количество защиты: {shield.ArmorDefence}");
+
+            Armor plate = new Armor("P1ate", ItemType.Heavy, -5);
+            Console.WriteLine($"Название {plate.Name}, уровень защиты: {plate.ArmorType}, " +
+                              $"количество защиты: {plate.ArmorDefence}");
+
+            //ПРОТЕСТИРОВАЛА КЛАСС ЗАЩИТА
+        }
+
+
+    }
+>>>>>>> parent of b5e0593 (upd classes, intrfaces, and more)
 
             //            Armor shield = new Armor("Shield", ItemType.Light, 5);
             //            Console.WriteLine($"Название {shield.Name}, уровень защиты: {shield.ArmorType}, " +
