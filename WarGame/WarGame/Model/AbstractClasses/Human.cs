@@ -8,32 +8,33 @@ namespace WarGame
         public virtual string Name
         {
             get;
-            set;
+            // set;
         }
         public virtual Gender HumanGender
         {
             get;
-            set;
+            // set;
         }
-        public virtual int HP
+        public virtual int HP   // Характеристики не должны меняться извне
         {
             get;
-            set;
+            // set;
         }
         public virtual int Strenght
         {
             get;
-            set;
+            // set;
         }
         public virtual int Dexterity
         {
             get;
-            set;
+            // set;
         }
         public virtual int Intellegence
         {
             get;
-            set;
+            // set;
         }
+
     }
 }

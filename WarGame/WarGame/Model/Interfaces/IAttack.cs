@@ -3,7 +3,7 @@ namespace WarGame
 {
 	public interface IAttack
 	{
-		void Attack();
+		public Warrior Attack(Warrior player1, Warrior player2);
 	}
 }
 
