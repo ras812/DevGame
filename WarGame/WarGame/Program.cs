@@ -18,8 +18,5 @@ namespace WarGame
             Arena arena = new Arena();
             Console.WriteLine($"Vitorious is {arena.Attack(player1, player2).Name}!!!");
         }
-
-
     }
-
 }
