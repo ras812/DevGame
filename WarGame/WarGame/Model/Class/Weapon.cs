@@ -69,103 +69,88 @@ namespace WarGame
             //        _damageMax = 1;
             //    }
         }
-    
 
-    //Constructors
-    public Weapon(string name, ItemType itemType, int dmgMin, int dmgMax)
-    {
-        try
+
+        //Constructors
+        public Weapon(string name, ItemType itemType, int dmgMin, int dmgMax)
+        {
+            try
             {
-                if(Handlers.IsString(name))
+                if (Handlers.IsString(name))
                 {
-               
                     _name = name;
-                
                 }
-                        
-            else
+
+                else
                 {
                     _name = "В имени могут быть только буквы";
                     throw new ArgumentException("Letters only!");
-
                 }
-            
-             }
-            
-            catch(Exception ex)
-            {
-                Console.WriteLine($"[{ex}]"); 
             }
-            
-            _weaponType = itemType; 
+
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[{ex}]");
+            }
+
+            _weaponType = itemType;
 
             try
             {
-                if(dmgMin > 0)
+                if (dmgMin > 0)
                 {
                     _damageMin = dmgMin;
                 }
-            
-            else
+
+                else
                 {
                     _damageMin = 1;
                     throw new ArgumentException("Can't be less 0!");
                 }
-
             }
-            
-             catch (Exception ex)
+
+            catch (Exception ex)
             {
                 Console.WriteLine($"[{ex}]");
             }
-            
-               try
+
+            try
             {
                 if (dmgMax > 0)
                 {
                     _damageMax = dmgMax;
                 }
-            
-            else
+
+                else
                 {
                     _damageMax = 1;
                     throw new ArgumentException("Can't be less 0!");
                 }
-            
             }
-        
-            catch(ArgumentException ex)
+
+            catch (ArgumentException ex)
             {
                 Console.WriteLine($"[{ex}]");
             }
-            
+
             try
             {
-                if(dmgMin < dmgMax) 
+                if (dmgMin < dmgMax)
                 {
                     _damageMax = dmgMax;
                     _damageMin = dmgMin;
                 }
-              else
+                else
                 {
                     _damageMax = 2;
                     _damageMin = 2;
                     throw new ArgumentException($"{_damageMin} can't be more then {_damageMax}");
                 }
-            
-            
             }
-             catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 Console.WriteLine($"[{ex}]");
             }
-        
-        
         }
-
-    
-
-}
-
-
+    }
 }
