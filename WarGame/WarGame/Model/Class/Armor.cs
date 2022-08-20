@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace WarGame
 {
@@ -11,59 +13,67 @@ namespace WarGame
         public override string Name
         {
             get { return _name; }
-            //set 
-            //{
-            //    try
-            //    {
-            //        if (Handlers.IsString(value))
-            //        {
-            //            _name = value;
-            //        }
-            //        else
-            //        {
-            //            _name = "LETTERS ONLY!";
-            //            throw new ArgumentException("STRING MUST CONTAINS ONLY LETTERS!");
-            //        }
-            //    }
-            //    catch(ArgumentException ex)  {
-            //        Console.WriteLine($"[{ex}]");
-            //    }
-            //}
         }
 
         public override ItemType ArmorType
         {
             get { return _armorType; }
-            // set { _armorType = value; }
         }
 
         public override int ArmorDefence
         {
             get { return _armorDefence; }
-            //set 
-            //{
-            //    if (value > 0)
-            //    {
-            //        _armorDefence = value;
-            //    }
-            //    else
-            //    {
-            //        _armorDefence = 1;
-            //    }
-            //}
-        }   // тут тоже надо делать проверку, если знечение будет отрицательным, то должно ровняться 1
+        }
 
-        public Armor(string name, ItemType armorType, int armorDefence)    //КОНСТРУКОР ТАКОЙ ДОЛЖЕН БЫТЬ? 
+        public Armor()
         {
+            Random rnd = new Random();
+            string path = @"/Users/Aleks/Projects/DevGame/WarGame/WarGame/Model/DataBase/ArmorBase.txt";
+
+            List<string[]> itemsList;
+            itemsList = CreateItemsListFromFile(path);
+            int itemsListCount = itemsList.Count;
+
+            int rndNum = rnd.Next(0, itemsListCount);
+
+            _name = ValidName(Convert.ToString(itemsList[rndNum][0]));
+            _armorType = (ItemType)Convert.ToInt32(itemsList[rndNum][1]);
+            _armorDefence = ValidArmorDefence(Convert.ToInt32(itemsList[rndNum][2]));
+        }
+
+        public Armor(string name, ItemType armorType, int armorDefence)
+        {
+            _name = ValidName(name);
+            _armorType = armorType;
+            _armorDefence = ValidArmorDefence(armorDefence);
+        }
+
+        public List<string[]> CreateItemsListFromFile(string filePath)
+        {
+            List<string[]> res = new List<string[]>();
+
+            string[] itemPropertiesLine = File.ReadAllLines(filePath, System.Text.Encoding.UTF8);
+            int iPLlen = itemPropertiesLine.Length;
+            for (int i = 0; i < iPLlen; i++)
+            {
+                string[] temp = itemPropertiesLine[i].Split(';');
+                res.Add(temp);
+            }
+            return res;
+        }
+
+        private string ValidName(string name)
+        {
+            string res = "";
             try
             {
                 if (Handlers.IsString(name))
                 {
-                    _name = name;
+                    res = name;
                 }
                 else
                 {
-                    _name = "LETTERS ONLY!";
+                    res = "LETTERS ONLY!";
                     throw new ArgumentException("STRING MUST CONTAINS ONLY LETTERS!");
                 }
             }
@@ -71,18 +81,21 @@ namespace WarGame
             {
                 Console.WriteLine($"[{ex}]");
             }
+            return res;
+        }
 
-            _armorType = armorType;
-
+        private int ValidArmorDefence(int armorDefenceValue)
+        {
+            int res = 0;
             try
             {
-                if (armorDefence > 0)
+                if (armorDefenceValue > 0)
                 {
-                    _armorDefence = armorDefence;
+                    res = armorDefenceValue;
                 }
                 else
                 {
-                    _armorDefence = 1;
+                    res = 1;
                     throw new ArgumentException("VALUE MUST MORE THEN ZERO!");
                 }
             }
@@ -90,8 +103,8 @@ namespace WarGame
             {
                 Console.WriteLine($"[{ex}]");
             }
+            return res;
         }
 
     }
-
 }

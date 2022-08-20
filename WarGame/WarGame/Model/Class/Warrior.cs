@@ -10,8 +10,8 @@ namespace WarGame
         private int _strength;
         private int _dexterity;
         private int _intellegence;
-        private Weapon _weapon;
-        private Armor _armor;
+        private readonly Weapon _weapon;
+        private readonly Armor _armor;
 
         // Properties
         public override string Name { get { return _name; } }
