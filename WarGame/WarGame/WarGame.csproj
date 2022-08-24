@@ -10,9 +10,11 @@
     <None Remove="Model\AbstractClasses\" />
     <None Remove="Model\Enums\" />
     <None Remove="JetBrains.ReSharper.SDK" />
+    <None Remove="Model\DataBase\" />
   </ItemGroup>
   <ItemGroup>
 	<Folder Include="UML\" />
 	<Folder Include="UML\" />
+	<Folder Include="Model\DataBase\" />
   </ItemGroup>
 </Project>
