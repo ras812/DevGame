@@ -1,0 +1,5 @@
+﻿WeaponName1;1;5;10;
+WeaponName2;2;8;12;
+WeaponName3;2;4;8;
+WeaponName4;1;3;7;
+WeaponName5;3;5;9;
