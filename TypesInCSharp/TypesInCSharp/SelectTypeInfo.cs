@@ -18,7 +18,6 @@ namespace TypesInCSharp
         public string[] PropertiesInType { get; private set; }
         public Dictionary<string, int[]> DictMethodsInType { get; private set; }
 
-
         public TypeInfo(Type t)
         {
             TypeName = GetTypeName(t);
@@ -138,19 +137,20 @@ namespace TypesInCSharp
 
     public class SelectTypeInfo
     {
+        #region START Methods
         public void StartSelectTypeInfo()
         {
             Type[] arr =
-            {                       //MENU SLECTORS
-                typeof(int),		//[1]
-                typeof(long),		//[2]
-                typeof(float),		//[3]
-                typeof(double),		//[4]
-                typeof(char),		//[5]
-                typeof(string),		//[6]
-				typeof(Nullable),	//[7]
-                typeof(Nullable),	//[8]
-                typeof(Nullable),	//[9]
+            {                           //MENU SLECTORS
+                typeof(int),		    //[1]
+                typeof(long),		    //[2]
+                typeof(float),		    //[3]
+                typeof(double),		    //[4]
+                typeof(char),		    //[5]
+                typeof(string),		    //[6]
+				typeof(ConsoleColor),	//[7]
+                typeof(Nullable),	    //[8]
+                typeof(Nullable),	    //[9]
             };
 
             DisplayMenuSelectTypeInfo();
@@ -158,6 +158,7 @@ namespace TypesInCSharp
             while (true)
             {
                 char c = char.ToLower(Console.ReadKey(true).KeyChar);
+
                 if (c == '1' || c == '2' || c == '3' || c == '4' || c == '5'
                     || c == '6' || c == '7' || c == '8' || c == '9')
                 {
@@ -220,6 +221,7 @@ namespace TypesInCSharp
                 }
             }
         }
+        #endregion
 
         #region DISPLAY methods
         private void DisplayMenuSelectTypeInfo()
@@ -233,7 +235,7 @@ namespace TypesInCSharp
                               $"[4] - [ DOUBLE ]\n" +
                               $"[5] - [ CHAR ]\n" +
                               $"[6] - [ STRING ]\n" +
-                              $"[7] - [ nullable ]\n" +
+                              $"[7] - [ ConsoleColor ]\n" +
                               $"[8] - [ nullable ]\n" +
                               $"[9] - [ nullable ]\n" +
                               $"================\n" +

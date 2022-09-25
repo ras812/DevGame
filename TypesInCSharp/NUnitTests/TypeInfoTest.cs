@@ -6,7 +6,7 @@ namespace NUnitTests
 {
     [TestFixture]
 
-    public class TestTypeInfoClassMethods
+    public class TypeInfoTest
     {
         [Test]
         [TestCase(typeof(int), "System.Int32")]
