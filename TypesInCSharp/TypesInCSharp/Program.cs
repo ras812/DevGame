@@ -6,16 +6,15 @@ namespace TypesInCSharp
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-            //SelectTypeInfo appStart = new SelectTypeInfo();
-            //appStart.StartSelectTypeInfo();
+            //MainMenu m = new MainMenu();
+            //m.StartMainMenu();
 
-            ConsoleView cv = new ConsoleView();
-            cv.StartChangeConsoleView();
+            ShowAllTypeInfo saati = new ShowAllTypeInfo();
+            saati.StartShowAllTypeInfo(new AssemblyInfo());
+
         }
     }
-    
 }
 

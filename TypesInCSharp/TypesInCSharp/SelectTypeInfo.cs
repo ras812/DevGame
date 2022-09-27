@@ -170,8 +170,8 @@ namespace TypesInCSharp
 
                 else if (c == '0')
                 {
-                    Console.Clear();
-                    Console.WriteLine("RETURN TO MAIN MENU");
+                    MainMenu m = new MainMenu();
+                    m.StartMainMenu();
                     break;
                 }
             }
@@ -195,8 +195,8 @@ namespace TypesInCSharp
                 }
                 else if (c == '0')
                 {
-                    Console.Clear();
-                    Console.WriteLine("RETURN TO MAIN MENU");
+                    MainMenu m = new MainMenu();
+                    m.StartMainMenu();
                     break;
                 }
             }
@@ -215,8 +215,8 @@ namespace TypesInCSharp
                 }
                 else if (c == '0')
                 {
-                    Console.Clear();
-                    Console.WriteLine("RETURN TO MAIN MENU");
+                    MainMenu m = new MainMenu();
+                    m.StartMainMenu();
                     break;
                 }
             }
