@@ -11,7 +11,8 @@ namespace TypesInCSharp
                 char c = Handlers.InPutHandler();
                 if (c == '1')
                 {
-                    Console.WriteLine("NOT READY YET!!!");
+                    ShowAllTypeInfo sati = new ShowAllTypeInfo();
+                    sati.StartShowAllTypeInfo();
                     break;
                 }
                 else if (c == '2')
@@ -28,6 +29,8 @@ namespace TypesInCSharp
                 }
                 else if (c == '0')
                 {
+                    Console.Clear();
+                    DisplayProgramTerminated();
                     Environment.Exit(0);
                 }
             }
@@ -46,6 +49,18 @@ namespace TypesInCSharp
                               $"================\n" +
                               $"[0] - [ Quit program ]"
                              );
+        }
+
+        private void DisplayProgramTerminated()
+        {
+            Console.WriteLine($" \n"+ 
+               $"####   ####   ####  #####      #####  #   # ######\n"+
+               $"#    # #    # #    # #    #    #    #  # #  #     \n"+
+               $"#      #    # #    # #    #    #####    #   ##### \n"+
+               $"#  ### #    # #    # #    #    #    #   #   #     \n"+
+               $"#    # #    # #    # #    #    #    #   #   #     \n"+
+               $"####   ####   ####  #####      #####    #   ######\n"
+               );
         }
     }
 }

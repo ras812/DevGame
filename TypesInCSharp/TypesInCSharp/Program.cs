@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.Intrinsics.X86;
 
 namespace TypesInCSharp
 {
@@ -8,12 +9,11 @@ namespace TypesInCSharp
     {
         static void Main(string[] args)
         {
-            //MainMenu m = new MainMenu();
-            //m.StartMainMenu();
+            MainMenu m = new MainMenu();
+            m.StartMainMenu();
 
-            ShowAllTypeInfo saati = new ShowAllTypeInfo();
-            saati.StartShowAllTypeInfo(new AssemblyInfo());
-
+            //ShowAllTypeInfo saati = new ShowAllTypeInfo();
+            //saati.StartShowAllTypeInfo();
         }
     }
 }
