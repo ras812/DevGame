@@ -11,9 +11,6 @@ namespace TypesInCSharp
         {
             MainMenu m = new MainMenu();
             m.StartMainMenu();
-
-            //ShowAllTypeInfo saati = new ShowAllTypeInfo();
-            //saati.StartShowAllTypeInfo();
         }
     }
 }
