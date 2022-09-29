@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace TypesInCSharp
 {
 	public class MainMenu
@@ -30,7 +31,7 @@ namespace TypesInCSharp
                 else if (c == '0')
                 {
                     Console.Clear();
-                    DisplayProgramTerminated();
+                    Console.WriteLine($"PROGRAM TERMINATED WITH ERROR [0]");
                     Environment.Exit(0);
                 }
             }
@@ -39,9 +40,9 @@ namespace TypesInCSharp
 		private void DisplayMainMenu()
 		{
             Console.Clear();
-            Console.WriteLine($"WELLCOME\n"+
-                              $"   to\n" +
-                              $"TYPEINFO\n" +
+            Console.WriteLine($"=== WELLCOME ===\n"+
+                              $"===    to    ===\n" +
+                              $"=== TYPEINFO ===\n" +
                               $"================\n" +
                               $"[1] - [ Show all type info ]\n" +
                               $"[2] - [ Select by type ]\n" +
@@ -49,18 +50,6 @@ namespace TypesInCSharp
                               $"================\n" +
                               $"[0] - [ Quit program ]"
                              );
-        }
-
-        private void DisplayProgramTerminated()
-        {
-            Console.WriteLine($" \n"+ 
-               $"####   ####   ####  #####      #####  #   # ######\n"+
-               $"#    # #    # #    # #    #    #    #  # #  #     \n"+
-               $"#      #    # #    # #    #    #####    #   ##### \n"+
-               $"#  ### #    # #    # #    #    #    #   #   #     \n"+
-               $"#    # #    # #    # #    #    #    #   #   #     \n"+
-               $"####   ####   ####  #####      #####    #   ######\n"
-               );
         }
     }
 }

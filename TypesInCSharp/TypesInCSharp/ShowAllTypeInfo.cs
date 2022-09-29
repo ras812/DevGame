@@ -7,6 +7,7 @@ namespace TypesInCSharp
     public class AssemblyInfo
     {
         private readonly List<Type> _ltypes = new List<Type>();
+
         public int AssemblyCounts { get; private set; }
         public int TypeCountsInAllAssemblies { get; private set; }
         public int ReferenceTypeCounts { get; private set; }
@@ -14,11 +15,15 @@ namespace TypesInCSharp
         public int InterfaceTypeCount { get; private set; }
 
         public string TypeWithMaxMethodsCount { get; private set; }
+        public string LongestMethodsName { get; private set; }
+        public string MethodNameWithMaxArguments { get; private set; }
 
 
         public AssemblyInfo()
         {
-            _ltypes = GetTypesList();
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            _ltypes = GetTypesList(assemblies);
+
             AssemblyCounts = GetAssemblyCounts();
             TypeCountsInAllAssemblies = GetTypeCountsInAllAssemblies();
             
@@ -28,22 +33,41 @@ namespace TypesInCSharp
             InterfaceTypeCount = interTCount;
 
             TypeWithMaxMethodsCount = GetTypeWithMaxMethodsCount();
+            LongestMethodsName = GetLongestMethodsName();
+            MethodNameWithMaxArguments = GetMethodNameWithMaxArguments();
         }
 
-        private List<Type> GetTypesList()
+        public AssemblyInfo(Type t)
         {
-            List<Type> Lt = new List<Type>();
+            _ltypes.Add(t);
 
-            Assembly[] assembliesArray = AppDomain.CurrentDomain.GetAssemblies();
-            foreach (Assembly asm in assembliesArray)
+            AssemblyCounts = GetAssemblyCounts();
+            TypeCountsInAllAssemblies = GetTypeCountsInAllAssemblies();
+
+            GetRefValInterTypesCount(out int refTCount, out int valTCount, out int interTCount);
+            ReferenceTypeCounts = refTCount;
+            ValueTypeCounts = valTCount;
+            InterfaceTypeCount = interTCount;
+
+            TypeWithMaxMethodsCount = GetTypeWithMaxMethodsCount();
+            LongestMethodsName = GetLongestMethodsName();
+            MethodNameWithMaxArguments = GetMethodNameWithMaxArguments();
+        }
+
+
+        private List<Type> GetTypesList(Assembly[] assemblies)
+        {
+            List<Type> res = new List<Type>();
+
+            foreach (Assembly asm in assemblies)
             {
                 foreach (var item in asm.GetTypes())
                 {
-                    Lt.Add(item);
+                    res.Add(item);
                 }
             }
 
-            return Lt;
+            return res;
         }
 
         private int GetAssemblyCounts()
@@ -83,6 +107,7 @@ namespace TypesInCSharp
         private string GetTypeWithMaxMethodsCount()
         {
             Dictionary<string, int> methodsInTypeCount = new Dictionary<string, int>();
+
             foreach (var item in _ltypes)
             {
                 if (!methodsInTypeCount.ContainsKey(item.Name))
@@ -92,25 +117,73 @@ namespace TypesInCSharp
             }
 
             int maxCount = 0;
-            string nameOfTypeWithMaxMethodCount = "";
+            string res = "";
+
             foreach (var item in methodsInTypeCount)
             {
                 if (item.Value >= maxCount)
                 {
                     maxCount = item.Value;
-                    nameOfTypeWithMaxMethodCount = item.Key;
+                    res = item.Key;
                 }
             }
 
-            return nameOfTypeWithMaxMethodCount;
+            return res;
+        }
+
+        private string GetLongestMethodsName()
+        {
+            string res = "";
+            List<string> methodsNameList = new List<string>();
+
+            foreach (var type in _ltypes)
+            {
+                foreach (var method in type.GetMethods())
+                {
+                    if (method.Name.Length >= res.Length)
+                    {
+                        res = method.Name;
+                    }
+                }
+            }
+
+            return res;
+        }
+
+        private string GetMethodNameWithMaxArguments()
+        {
+            int maxArgs = 0;
+            string res = "";
+
+            foreach (var type in _ltypes)
+            {
+                foreach (var method in type.GetMethods())
+                {
+                    if (method.GetParameters().Length >= maxArgs)
+                    {
+                        maxArgs = method.GetParameters().Length;
+                        res = method.Name;
+                    }
+                }
+            }
+            return res;
+        }
+
+        public void DisplayInfo()
+        {
+            Console.WriteLine(
+                $"TypeCountsInAllAssemblies [{TypeCountsInAllAssemblies}]\n" +
+                $"ReferenceTypeCounts [{ReferenceTypeCounts}]\n" +
+                $"ValueTypeCounts [{ValueTypeCounts}]\n" +
+                $"InterfaceTypeCount [{InterfaceTypeCount}]\n" +
+                $"TypeWithMaxMethodsCount [{TypeWithMaxMethodsCount}]\n" +
+                $"LongestMethodsName [{LongestMethodsName}]\n" +
+                $"MethodNameWithMaxArguments [{MethodNameWithMaxArguments}]");
         }
     }
 
 	public class ShowAllTypeInfo
 	{
-		public ShowAllTypeInfo()
-		{
-		}
 
 		public void StartShowAllTypeInfo()
         {
@@ -139,26 +212,12 @@ namespace TypesInCSharp
                               $"Values type: {asi.ValueTypeCounts}\n" +
                               $"Interface type: {asi.InterfaceTypeCount}\n" +
                               $"Type with max methods count: {asi.TypeWithMaxMethodsCount}\n" +
-                              $"Longest methods name:\n" +
-                              $"Method with max arguments:\n" +
+                              $"Longest methods name: {asi.LongestMethodsName}\n" +
+                              $"Method with max arguments: {asi.MethodNameWithMaxArguments}\n" +
                               $"================\n" +
                               $"[0] - [ MAIN MENU ]"
                              );
         }
-
-
-        //Общая информация по типам
-        //Подключенные сборки: 17
-        //Всего типов по всем подключенным сборкам: 26103
-        //Ссылочные типы: 20601
-        //Значимые типы: 4377
-        //Типы-интерфейсы:
-        //Тип с максимальным числом методов:
-        //Самое длинное название метода:
-        //Метод с наибольшим числом аргументов:
-        //Нажмите любую клавишу, чтобы вернуться в главное меню
-
-
     }
 }
 
