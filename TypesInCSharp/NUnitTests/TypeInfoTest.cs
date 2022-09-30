@@ -122,9 +122,9 @@ namespace NUnitTests
         [TestCase(typeof(int), "Equals", "Equals 2 1 1")]
         [TestCase(typeof(bool), "TryParse", "TryParse 2 2 2")]
         [TestCase(typeof(string), "CopyTo", "CopyTo 1 4 4")]
-        public void Test_GetDictMethodsInType(Type t, string methodName, string expected)
+        public void Test_GetDictMethodsInType(Type typeOfElement, string methodName, string expected)
         {
-            TypesInCSharp.TypeInfo ti = new TypesInCSharp.TypeInfo(t);
+            TypesInCSharp.TypeInfo ti = new TypesInCSharp.TypeInfo(typeOfElement);
 
             Dictionary<string, int[]> actual =  ti.DictMethodsInType;
 
