@@ -37,6 +37,8 @@ namespace TypesInCSharp
             MethodNameWithMaxArguments = GetMethodNameWithMaxArguments();
         }
 
+
+        #region Ctor FOR TEST
         public AssemblyInfo(Type t)
         {
             _ltypes.Add(t);
@@ -53,8 +55,9 @@ namespace TypesInCSharp
             LongestMethodsName = GetLongestMethodsName();
             MethodNameWithMaxArguments = GetMethodNameWithMaxArguments();
         }
+        #endregion
 
-
+        #region PROPERTIES_HANDLERS
         private List<Type> GetTypesList(Assembly[] assemblies)
         {
             List<Type> res = new List<Type>();
@@ -168,18 +171,7 @@ namespace TypesInCSharp
             }
             return res;
         }
-
-        public void DisplayInfo()
-        {
-            Console.WriteLine(
-                $"TypeCountsInAllAssemblies [{TypeCountsInAllAssemblies}]\n" +
-                $"ReferenceTypeCounts [{ReferenceTypeCounts}]\n" +
-                $"ValueTypeCounts [{ValueTypeCounts}]\n" +
-                $"InterfaceTypeCount [{InterfaceTypeCount}]\n" +
-                $"TypeWithMaxMethodsCount [{TypeWithMaxMethodsCount}]\n" +
-                $"LongestMethodsName [{LongestMethodsName}]\n" +
-                $"MethodNameWithMaxArguments [{MethodNameWithMaxArguments}]");
-        }
+        #endregion
     }
 
 	public class ShowAllTypeInfo
