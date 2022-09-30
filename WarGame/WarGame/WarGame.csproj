@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Model\" />
+    <None Remove="Model\AbstractClasses\" />
+    <None Remove="Model\Enums\" />
+    <None Remove="JetBrains.ReSharper.SDK" />
+    <None Remove="Model\DataBase\" />
+  </ItemGroup>
+  <ItemGroup>
+	<Folder Include="UML\" />
+	<Folder Include="UML\" />
+	<Folder Include="Model\DataBase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Model\DataBase\ArmorBase.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
