@@ -9,10 +9,17 @@
     <None Remove="Model\" />
     <None Remove="Model\AbstractClasses\" />
     <None Remove="Model\Enums\" />
+    <None Remove="JetBrains.ReSharper.SDK" />
+    <None Remove="Model\DataBase\" />
   </ItemGroup>
   <ItemGroup>
 	<Folder Include="UML\" />
 	<Folder Include="UML\" />
-    <Folder Include="Model\Class\" />
+	<Folder Include="Model\DataBase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Model\DataBase\ArmorBase.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

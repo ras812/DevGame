@@ -1,0 +1,3 @@
+﻿Aegis;1;10;
+Bonewall;3;22;
+Magneto;2;17;
