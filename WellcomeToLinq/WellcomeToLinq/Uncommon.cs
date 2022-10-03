@@ -34,31 +34,28 @@ namespace WellcomeToLinq
         public static string[] GetWordsFromFiles(string filesPath)
         {
             string[] fileNames = Directory.GetFiles(filesPath);
-            List<string> linesList = new List<string>();
+            char[] delimiterChars = GetDelimiterChars();
+            List<string> resList = new List<string>();
 
             foreach (var file in fileNames)
             {
                 string[] lines = File.ReadAllLines(file);
-                linesList.AddRange(lines);
-            }
 
-            List<string> wordsList = new List<string>();
-            char[] delimiterChars = GetDelimiterChars();
-
-            foreach (var item in linesList)
-            {
-                string[] sub = item.Split(delimiterChars,
-                                          StringSplitOptions.RemoveEmptyEntries);
-
-                foreach (var s in sub)
+                foreach (var line in lines)
                 {
-                    s.Trim();
-                }
+                    string[] subline = line.Split(delimiterChars,
+                                                  StringSplitOptions.RemoveEmptyEntries);
 
-                wordsList.AddRange(sub);
+                    foreach (var item in subline)
+                    {
+                        item.Trim();
+                    }
+
+                    resList.AddRange(subline);
+                }
             }
 
-            return wordsList.ToArray();
+            return resList.ToArray();
         }
     }
 }
