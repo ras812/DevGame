@@ -30,7 +30,7 @@ namespace WellcomeToLinq
             return charsList.ToArray();
         }
 
-        //public static 
+        public static string[] 
     }
 }
 
