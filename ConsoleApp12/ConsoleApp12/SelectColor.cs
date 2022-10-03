@@ -15,7 +15,7 @@ namespace ConsoleApp12
         {
             Console.BackgroundColor = (ConsoleColor)colBack;
             Console.ForegroundColor = (ConsoleColor)colText;
-            Console.WriteLine("Hello, Cat");
+            Console.WriteLine("Hello, Cat!");
         }
 
 
