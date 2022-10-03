@@ -7,11 +7,15 @@ using System.Reflection;
 
 namespace ConsoleApp12
 {
-    internal class ShowAllType
+    public class ShowAllType
     {
+        internal void StartShowAllType()
+        {
+            throw new NotImplementedException();
+        }
     }
 
-namespace TypesInCSharp
+    namespace TypesInCSharp
     {
         public class AssemblyInfo
         {
@@ -205,18 +209,18 @@ namespace TypesInCSharp
             private void DisplayShowAllTypeInfo(AssemblyInfo asi)
             {
                 Console.Clear();
-                Console.WriteLine($"General info by types in assemblies\n" +
+                Console.WriteLine($"Common information of types:\n" +
                                   $"================\n" +
-                                  $"Assemblies: {asi.AssemblyCounts}\n" +
-                                  $"Types in all assemblies: {asi.TypeCountsInAllAssemblies}\n" +
-                                  $"References type: {asi.ReferenceTypeCounts}\n" +
-                                  $"Values type: {asi.ValueTypeCounts}\n" +
-                                  $"Interface type: {asi.InterfaceTypeCount}\n" +
-                                  $"Type with max methods count: {asi.TypeWithMaxMethodsCount}\n" +
-                                  $"Longest methods name: {asi.LongestMethodsName}\n" +
-                                  $"Method with max arguments: {asi.MethodNameWithMaxArguments}\n" +
+                                  $"[ Подключенные сборки: {asi.AssemblyCounts}\n" +
+                                  $"[ Всего типов по всем подключенным сборкам: ] {asi.TypeCountsInAllAssemblies}\n" +
+                                  $"[ Ссылочные типы: ] {asi.ReferenceTypeCounts}\n" +
+                                  $"[ Значимые типы: ] {asi.ValueTypeCounts}\n" +
+                                  $"[ Типы-интерфейсы: ] {asi.InterfaceTypeCount}\n" +
+                                  $"[ Тип с максимальным числом методов: {asi.TypeWithMaxMethodsCount}\n" +
+                                  $"[ Самое длинное название метода:  ] {asi.LongestMethodsName}\n" +
+                                  $"[ Метод с наибольшим числом аргументов:   ] {asi.MethodNameWithMaxArguments}\n" +
                                   $"================\n" +
-                                  $"[0] - [ MAIN MENU ]"
+                                  $"[ Нажмите 0, чтобы вернуться в главное меню   ]"
                                  );
             }
         }

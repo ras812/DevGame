@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp12.TypesInCSharp;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using static ConsoleApp12.Program;
@@ -34,7 +35,9 @@ namespace ConsoleApp12
                 int ret = Handlers.ReadNum();
                 if(ret == 1)
                 {
-
+                    ShowAllTypeInfo sati = new ShowAllTypeInfo();
+                    sati.StartShowAllTypeInfo();
+                    break;
                 }
             
                 if(ret == 2)
