@@ -9,11 +9,12 @@ namespace NUnitTests
     {
         [Test]
         [TestCase(new string[] { "A", "A", "A", "A", "A", "A", "A" }, "A", 7)]
-        public void Test_GetFrequentDictionary(string[] frequentWords, string expectedWord, int expectedFrequent)
+        [TestCase(new string[] { }, null, null)]
+        public void Test_GetFrequentWordsDictionary(string[] frequentWords, string expectedWord, int expectedFrequent)
         {
             string filesPath = @"/Users/Aleks/Projects/DevGame/WellcomeToLinq/Chesterton";
             WordsHandlers wh = new WordsHandlers(filesPath);
-            Dictionary<string, int> wordsFreqDict = wh.Test_GetFrequentDictionary(frequentWords);
+            Dictionary<string, int> wordsFreqDict = wh.Test_GetFrequentWordsDictionary(frequentWords);
 
             foreach (var item in wordsFreqDict)
             {

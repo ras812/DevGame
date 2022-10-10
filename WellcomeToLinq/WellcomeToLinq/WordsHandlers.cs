@@ -5,11 +5,13 @@ namespace WellcomeToLinq
 {
     public class WordsHandlers
     {
-        public string[] Words { get; private set; }
+        private readonly string[] _words;
+        private readonly Dictionary<string, int> _frequentWordsDict;
 
         public WordsHandlers(string filePath)
         {
-            Words = Uncommon.GetWordsFromFiles(filePath);
+            _words = Uncommon.GetWordsFromFiles(filePath);
+            _frequentWordsDict = GetFrequentWordsDictionary(_words);
         }
 
         public string GetLongestWordTraditional()
@@ -17,7 +19,7 @@ namespace WellcomeToLinq
             int MaxWordLength = 0;
             string res = "";
 
-            foreach (var word in Words)
+            foreach (var word in _words)
             {
                 if (word.Length >= MaxWordLength)
                 {
@@ -32,16 +34,14 @@ namespace WellcomeToLinq
         public string[] TenMostFrequentWordsTraditional()
         {
             List<string> res = new List<string>();
-            Dictionary<string, int> FrequentWordDict = new Dictionary<string, int>();
-            FrequentWordDict = GetFrequentDictionary();
-            //
             int superMaxNum = int.MaxValue;
+
             for (int i = 0; i < 10; i++)
             {
                 int max = 0;
                 string result = "";
 
-                foreach (var item in FrequentWordDict)
+                foreach (var item in _frequentWordsDict)
                 {
                     if (item.Value >= max && item.Value < superMaxNum)
                     {
@@ -53,48 +53,33 @@ namespace WellcomeToLinq
                 superMaxNum = max;
                 res.Add(result);
             }
-            //
+            
             return res.ToArray();
         }
 
-        private Dictionary<string, int> GetFrequentDictionary()
+        private Dictionary<string, int> GetFrequentWordsDictionary(string[] words)
         {
-            Dictionary<string, int> ResDict = new Dictionary<string, int>();
-
-            foreach (var word in Words)
-            {
-                if (!ResDict.ContainsKey(word))
-                {
-                    ResDict.Add(word, 1);
-                }
-                else
-                {
-                    ResDict[word]++;
-                }
-            }
-
-            return ResDict;
-        }
-
-        public Dictionary<string, int> Test_GetFrequentDictionary(string[] words)
-        {
-            Dictionary<string, int> ResDict = new Dictionary<string, int>();
+            Dictionary<string, int> ResultDict = new Dictionary<string, int>();
 
             foreach (var word in words)
             {
-                if (!ResDict.ContainsKey(word))
+                if (!ResultDict.ContainsKey(word))
                 {
-                    ResDict.Add(word, 1);
+                    ResultDict.Add(word, 1);
                 }
                 else
                 {
-                    ResDict[word]++;
+                    ResultDict[word]++;
                 }
             }
 
-            return ResDict;
+            return ResultDict;
         }
 
+        public Dictionary<string, int> Test_GetFrequentWordsDictionary(string[] words)
+        {
+            return GetFrequentWordsDictionary(words);
+        }
     }
 }
 
