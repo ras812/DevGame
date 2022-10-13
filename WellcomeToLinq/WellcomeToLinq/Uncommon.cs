@@ -17,6 +17,7 @@ namespace WellcomeToLinq
             {
                 int num = i;
                 char c = (char)num;
+
                 if (char.IsSeparator(c) ||
                     char.IsPunctuation(c) ||
                     char.IsWhiteSpace(c) ||
